@@ -1,0 +1,24 @@
+{
+  "name": "lucky-numbers",
+  "version": "1.0.0",
+  "description": "lucky number 7 finder",
+  "main": "js/main.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "start": "http-server -o"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-jest": "^24.9.0",
+    "http-server": "^0.12.1",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  }
+}
