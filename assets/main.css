@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    width: 90%;
+    padding: auto;
+    margin: 20px;
+    background-image: url('images/arches-branches.jpg');
+    background-size: contain;
+    color: #84dcc6;
+}
+
+.flex-container {
+    background-color: rgba(0,0,0,.8);
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 1600px;
+    align-content: center;
+    width: 90%;
+}
+
+h1 {
+    font-family: "Arial Black", sans-serif;
+    text-align: center;
+    color: #84dcc6;
+}
+
+input {
+    padding: 10px 16px;
+    margin: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+input:invalid {
+    border: 1px mediumpurple;
+}
+
+#output {
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#warn {
+    color: magenta;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    margin: auto;
+}
+
+#button {
+    background-color: #84dcc6;
+    font-weight: bolder;
+}
+

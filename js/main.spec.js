@@ -6,17 +6,17 @@ describe('main', () => {
   describe('getLuckyNumbers', () => {
     it('returns lucky numbers between 100 and 200 inclusively', () => {
       expect(getLuckyNumbers(100, 200))
-        .toStrictEqual( '11 lucky number(s) found:\n\    106,115,124,133,142,151,160,169,178,187,196');
+        .toStrictEqual( '106\n115\n124\n133\n142\n151\n160\n169\n178\n187\n196');
     });
 
     it('returns lucky numbers between 62,400 and 62,500 inclusively', () => {
       expect(getLuckyNumbers(62400, 62500))
-        .toStrictEqual('11 lucky number(s) found:\n\    62404,62413,62422,62431,62440,62449,62458,62467,62476,62485,62494');
+        .toStrictEqual('62404\n62413\n62422\n62431\n62440\n62449\n62458\n62467\n62476\n62485\n62494');
     });
 
     it('returns lucky numbers between 999,999,999,900 and 1,000,000,000,000 inclusively', () => {
       expect(getLuckyNumbers(999999999900, 1000000000000))
-        .toStrictEqual('11 lucky number(s) found:\n\    999999999907,999999999916,999999999925,999999999934,999999999943,999999999952,999999999961,999999999970,999999999979,999999999988,999999999997');
+        .toStrictEqual('999999999907\n999999999916\n999999999925\n999999999934\n999999999943\n999999999952\n999999999961\n999999999970\n999999999979\n999999999988\n999999999997');
     });
   });
 
@@ -54,7 +54,7 @@ describe('main', () => {
 
   describe('formatOutput', ()=> {
     it('formats lucky number output', () => {
-      expect(formatOutput([7,16])).toBe('2 lucky number(s) found:\n\    7,16');
+      expect(formatOutput([7,16])).toBe('7\n16');
     });
 
     it('formats output when no lucky numbers found', () => {
@@ -98,7 +98,7 @@ describe('main', () => {
 
       document.getElementById('button').click();
 
-      expect(document.getElementById('output').innerText).toStrictEqual('1 lucky number(s) found:\n\    7');
+      expect(document.getElementById('output').innerText).toStrictEqual('7');
     });
 
     it('populates output with no output message when no lucky numbers found', function () {

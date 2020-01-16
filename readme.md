@@ -4,13 +4,13 @@ Framework agnostic static ES6 webpage that calculates all lucky numbers between 
 
 ## Getting Started
 
-npm install
-npm start
+* npm install
+* npm start
 
 ## Running Unit Tests
 
-npm test
-npm coverage
+* npm test
+* npm run coverage
 
 ## Built With
 

@@ -1,12 +1,19 @@
 export { getLuckyNumbers, isLucky, sumDigits, formatOutput };
 
 window.submit = () => {
-  let input1 = document.getElementById('input1');
-  let input2 = document.getElementById('input2');
-  document.getElementById("output").innerText
-    = getLuckyNumbers(
-      parseInt(input1.value.replace(/,/g, '')),
-      parseInt(input2.value.replace(/,/g, '')));
+  let input1 = parseInt(document.getElementById('input1').value.replace(/,/g, ''));
+  let input2 = parseInt(document.getElementById('input2').value.replace(/,/g, ''));
+  let warn = document.getElementById('warn');
+  let message = document.getElementById('output');
+
+  if(validLength(input1, input2)) {
+    warn.innerText = '';
+    message.innerText = getLuckyNumbers(input1, input2);
+  }
+  else {
+    warn.innerText = 'please choose positive, consecutive integers with a difference between 0 and 100,000';
+    message.innerText = '';
+  }
 };
 
 const getLuckyNumbers = (num1, num2) => {
@@ -34,9 +41,12 @@ const sumDigits = (num) => {
 };
 
 const formatOutput = (luckyArray) => {
-  if(luckyArray.length>0){
-    return `${luckyArray.length} lucky number(s) found:
-    ${luckyArray.toString()}`;
+  if(luckyArray.length>0) {
+    return luckyArray.toString().split(',').join('\n');
   }
   return 'No lucky numbers found.';
+};
+
+const validLength = (input1, input2) => {
+  return input2-input1 < 100000 && input2-input1 >= 0 ;
 };

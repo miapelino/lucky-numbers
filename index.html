@@ -4,15 +4,19 @@
       <meta charset="utf-8">
       <title>Lucky#7</title>
       <link rel="shortcut icon" href="assets/images/favicon.ico"/>
+      <link rel="stylesheet" href="assets/main.css">
       <script defer src="js/main.js" type="module" charset="utf-8"></script>
     </head>
     <body>
-    <h1>Lucky Number Seven <small> by mia</small></h1>
-      <label for="input1">first #</label>
-      <input id="input1" placeholder="0" required>
-      <label for="input2">second #</label>
-      <input id="input2" placeholder="0" required/>
-    <input value="get lucky" type="button" id="button" onclick="submit()"/>
-    <div id="output"/>
+    <div id="calculator" class="flex-container">
+      <h1>Lucky #7</h1>
+      <div>
+        <input id="input1" placeholder="first number" required />
+        <input id="input2" placeholder="second number" required />
+        <input value="get lucky!" type="button" id="button" onclick="submit()"/>
+      </div>
+      <p id="warn"/>
+      <h3 id="output"/>
+    </div>
     </body>
   </html>
