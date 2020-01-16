@@ -1,4 +1,4 @@
-export { getLuckyNumbers, getRange, isLucky };
+export { getLuckyNumbers, isLucky, sumDigits, formatOutput };
 
 window.submit = () => {
   let input1 = document.getElementById('input1');
@@ -10,32 +10,33 @@ window.submit = () => {
 };
 
 const getLuckyNumbers = (num1, num2) => {
-  const rangeSize = num2-num1+1;
-  let range = getRange(rangeSize, num1);
-  return formatOutput(range.filter(num => isLucky(num) && num));
-};
-
-const getRange = (size, lowerBound) => {
-  return Array.from({ length: size },  (x,i) => i + lowerBound);
+  let luckyArray = [];
+    for(let i = num1; i <= num2; i++){
+       isLucky(i) && luckyArray.push(i);
+    }
+  return formatOutput(luckyArray);
 };
 
 const isLucky = (num) => {
-  let numArray = Array.from(num.toString()).map(Number);
-  let sum = numArray.reduce((a,b) => a + b);
-  if((sum+'').length > 1){
-    return isLucky(sum);
+  while(num > 9) {
+    num = sumDigits(num);
   }
-  return sum===7;
+  return num===7;
 };
 
-const formatOutput = (luckyNumbers) => {
-  //let input1 = document.getElementById('input1');
-  //let input2 = document.getElementById('input2');
-  // if(luckyNumbers.length>0){
-  //   return `WOW! You have ${luckyNumbers.length} Lucky Numbers!
-  //   They are: ${luckyNumbers.toString()}.`;
-  // }
-  // return `Oh no. There are no lucky numbers between ${input1.value} and ${input2.value}.
-  // What were you thinking?`
-  return luckyNumbers.toString();
+const sumDigits = (num) => {
+  let sum = 0;
+  while (num !== 0) {
+    sum = sum + num % 10;
+    num = Math.floor(num/10);
+  }
+  return sum;
+};
+
+const formatOutput = (luckyArray) => {
+  if(luckyArray.length>0){
+    return `${luckyArray.length} lucky number(s) found:
+    ${luckyArray.toString()}`;
+  }
+  return 'No lucky numbers found.';
 };

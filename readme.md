@@ -10,10 +10,11 @@ npm start
 ## Running Unit Tests
 
 npm test
+npm coverage
 
 ## Built With
 
-* [VanillaJS](http://www.vanilla-js.com) - framework used
+* [VanillaJS](http://www.vanilla-js.com) 
 * [Babel](http://www.babeljs.io) - transpiler
 * [Jest](http://www.jestjs.io) - unit testing framework
 * [http-server](http://www.npmjs.com) - command-line http server

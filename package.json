@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "http-server -o"
+    "start": "http-server -o",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
